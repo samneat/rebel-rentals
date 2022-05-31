@@ -1,6 +1,6 @@
 <h1>Ships page</h1>
 <ul>
   <% @ships.each do |ship| %>
-  <li><%= ship.name %></li>
+  <li><%= link_to ship.name, ship_path(ship) %></li>
   <% end %>
 </ul>
