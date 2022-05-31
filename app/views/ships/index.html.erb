@@ -1,2 +1,6 @@
 <h1>Ships page</h1>
-<%= @ships %>
+<ul>
+  <% @ships.each do |ship| %>
+  <li><%= ship.name %></li>
+  <% end %>
+</ul>
