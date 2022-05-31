@@ -21,6 +21,19 @@ class ShipsController < ApplicationController
     @ship = Ship.find(params[:id])
   end
 
+  def edit
+    @ship = Ship.find(params[:id])
+
+  end
+
+  def update
+    @ship = Ship.find(params[:id])
+    if @ship.update(ship_params)
+      redirect_to ship_path(@ship)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   private
 

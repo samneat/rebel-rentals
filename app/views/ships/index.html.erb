@@ -5,5 +5,6 @@
   <% end %>
 </ul>
 
-
-<%= link_to "Create Ship", new_ship_path %>
+<% if current_user  %>
+  <%= link_to "Create Ship", new_ship_path %>
+<% end %>
