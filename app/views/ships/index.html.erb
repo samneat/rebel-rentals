@@ -1,2 +1,10 @@
 <h1>Ships page</h1>
-<%= @ships %>
+<ul>
+  <% @ships.each do |ship| %>
+  <li><%= link_to ship.name, ship_path(ship) %></li>
+  <% end %>
+</ul>
+
+<% if current_user  %>
+  <%= link_to "Create Ship", new_ship_path %>
+<% end %>
