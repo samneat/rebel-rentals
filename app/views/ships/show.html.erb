@@ -6,3 +6,7 @@
 <p><%= @ship.weaknesses %></p>
 
 <%= link_to "All Ships", ships_path %>
+<br>
+<%= link_to "Edit Ship", edit_ship_path(@ship) %>
+<br>
+<%= link_to "Eliminate Ship", ship_path(@ship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>

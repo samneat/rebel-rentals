@@ -23,7 +23,6 @@ class ShipsController < ApplicationController
 
   def edit
     @ship = Ship.find(params[:id])
-
   end
 
   def update
@@ -33,6 +32,12 @@ class ShipsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @ship = Ship.find(params[:id])
+    @ship.destroy
+    redirect_to ships_path, status: :see_other
   end
 
   private
