@@ -5,6 +5,8 @@
 <p><%= @ship.strengths %></p>
 <p><%= @ship.weaknesses %></p>
 
+<%= link_to "Book Ship", new_ship_booking_path(@ship) %>
+
 <%= link_to "All Ships", ships_path %>
 <br>
 <%= link_to "Edit Ship", edit_ship_path(@ship) %>
