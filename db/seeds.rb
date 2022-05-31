@@ -6,12 +6,11 @@
 # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 # #   Character.create(name: "Luke", movie: movies.first)
 
-# require "json"
-# require "open-uri"
+require "json"
+require "open-uri"
 
-# url = "https://swapi.dev/api/starships/2/"
-# # ship_serialized = URI.open(url).read  # returns a string from the API
-# # ship = JSON.parse(ship_serialized) # parses string to a hash
-# # p ship
+url = "https://swapi.dev/api/starships/2/"
+ship_serialized = URI.open(url).read  # returns a string from the API
+ship = JSON.parse(ship_serialized) # parses string to a hash
 
-# # Ship.create!(name: ship.name, user_id: 1)
+Ship.create!(name: ship["name"], user_id: "1")
