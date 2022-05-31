@@ -7,7 +7,24 @@ class ShipsController < ApplicationController
     @ship = Ship.new
   end
 
+  def create
+    @ship = Ship.new(ship_params)
+    @ship.user = current_user
+    if @ship.save
+      redirect_to ship_path(@ship)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @ship = Ship.find(params[:id])
+  end
+
+
+  private
+
+  def ship_params
+    params.require(:ship).permit(:name, :description, :user_id, :crew, :weapons, :strengths, :weaknesses)
   end
 end
