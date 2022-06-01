@@ -1,0 +1,6 @@
+<h1>My Bookings</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %> </li>
+  <% end %>
+</ul>
