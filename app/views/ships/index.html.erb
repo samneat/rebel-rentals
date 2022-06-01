@@ -1,10 +1,19 @@
-<h1>Ships page</h1>
+<h1>The Hanger</h1>
 
   <% @ships.each do |ship| %>
-  <li class="card"><%= link_to ship.name, ship_path(ship) %></li>
+  <div class="card-product my-3">
+    <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
+    <div class="card-product-infos">
+      <h2><%= link_to ship.name, ship_path(ship) %></h2>
+      <p> <strong> <%= ship.model %> </strong>available for this battle, only <strong> <%= ship.cost %></strong> space credits only.</p>
+    </div>
+  </div>
+  <%# <li class="card"><%= link_to ship.name, ship_path(ship) %>
+  <%# </li> %>
   <% end %>
 
-
+<hr>
+<br>
 <% if current_user  %>
-  <%= link_to "Create Ship", new_ship_path %>
+  <%= link_to 'Create Ship', new_ship_path %>
 <% end %>
