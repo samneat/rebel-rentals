@@ -1,11 +1,12 @@
 <div class="form-group mt-3">
   <%= simple_form_for @ship do |f| %>
     <%= f.input :name %>
-    <%= f.input :description %>
+    <%= f.input :model %>
+    <%= f.input :cost %>
+    <%= f.input :length %>
+    <%= f.input :atmospheric_speed %>
     <%= f.input :crew %>
-    <%= f.input :weapons %>
-    <%= f.input :strengths %>
-    <%= f.input :weaknesses %>
+    <%= f.input :passengers %>
     <%= f.button :submit, class:"btn btn-primary" %>
   <% end %>
 </div>
