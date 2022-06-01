@@ -20,6 +20,21 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
+  def edit
+    @ship = Ship.find(params[:ship_id])
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @ship = Ship.find(params[:ship_id])
+    if @booking.update(booking_params)
+      redirect_to my_bookings_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def booking_params
