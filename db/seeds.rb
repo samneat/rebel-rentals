@@ -18,7 +18,6 @@
 #   Ship.create!(name: ship["name"], description: ship["model"], user_id: 1)
 # end
 
-
 ship1 = Ship.create(name: "CR90 corvette", model: "CR90 corvette", cost: "3500000", length: "150", atmospheric_speed: "950", crew: "30-165", passengers: "600", user_id: 1)
 
 ship2 = Ship.create(name: "Star Destroyer", model: "Imperial I-class Star Destroyer", cost: "150000000", length: "1,600", atmospheric_speed: "975", crew: "47,060", passengers: "n/a", user_id: 1)
