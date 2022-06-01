@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_01_112409) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_120914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_112409) do
     t.string "length"
     t.string "atmospheric_speed"
     t.string "crew"
+    t.string "passengers"
     t.index ["user_id"], name: "index_ships_on_user_id"
   end
 
