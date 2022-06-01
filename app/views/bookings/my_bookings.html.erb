@@ -1,6 +1,6 @@
 <h1>My Bookings</h1>
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %> </li>
+    <li><%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %> <%= link_to "Edit Booking", edit_ship_booking_path(booking.ship, booking), class:"btn btn-primary m-3" %></li>
   <% end %>
 </ul>
