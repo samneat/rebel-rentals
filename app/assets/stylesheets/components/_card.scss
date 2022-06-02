@@ -14,9 +14,9 @@
   display: flex;
   flex-direction: column;
   box-shadow: 5px 10px;
-  width: 48%;
+  box-shadow: 8px 8px 24px #888888;
+  width: 30%;
   border-radius: 2px;
-  // box-shadow: 0 0 15px rgb(0 0 0 / 20%);
 }
 
 .card-trip-bottom-container {
@@ -70,7 +70,7 @@
 
 .card-trip-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

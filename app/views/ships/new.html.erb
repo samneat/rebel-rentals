@@ -1,13 +1,15 @@
-<div class="form-group mt-3">
-  <%= simple_form_for @ship do |f| %>
-    <%= f.input :name %>
-    <%= f.input :model %>
-    <%= f.input :cost %>
-    <%= f.input :length %>
-    <%= f.input :atmospheric_speed %>
-    <%= f.input :crew %>
-    <%= f.input :passengers %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-  <% end %>
+<div class="container">
+  <div class="form-group mt-3">
+    <%= simple_form_for @ship do |f| %>
+      <%= f.input :name %>
+      <%= f.input :model %>
+      <%= f.input :cost %>
+      <%= f.input :length %>
+      <%= f.input :atmospheric_speed %>
+      <%= f.input :crew %>
+      <%= f.input :passengers %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class:"btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

@@ -4,7 +4,7 @@
     <% @ships.each do |ship| %>
     <div class="card-trip mr-2 mb-5">
       <% if ship.photo.attached? %>
-        <%= cl_image_tag ship.photo.key, height: 300, width: 600, crop: :fill, :class => "img_card" %>
+        <%= cl_image_tag ship.photo.key, crop: :fill, :class => "img_card" %>
       <% else %>
         <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
       <% end %>
