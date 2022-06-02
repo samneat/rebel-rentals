@@ -3,10 +3,18 @@
   border-radius: 2px;
 }
 
+.container-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-between;
+}
+
 .card-trip {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  box-shadow: 5px 10px;
+  width: 48%;
   border-radius: 2px;
   // box-shadow: 0 0 15px rgb(0 0 0 / 20%);
 }
