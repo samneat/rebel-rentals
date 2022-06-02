@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :ships do
     resources :reviews, only: [:new, :show, :index]
     resources :bookings, only: [:new, :create, :show, :edit, :update] do
-      get "/confirm", to: "bookings#confirm"
+      get "/confirmation", to: "bookings#confirm"
+      patch "/accept", to: "bookings#accept"
     end
   end
   # Defines the root path route ("/")

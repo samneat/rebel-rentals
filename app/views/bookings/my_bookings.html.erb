@@ -5,4 +5,13 @@
   <% end %>
 </ul>
 
+<hr>
+<h1>Pending Bookings</h1>
+<% @pending_bookings.each do |booking| %>
+  <p>
+    <%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %>
+    <%= link_to "Confirm", ship_booking_accept_path(booking.ship, booking, accepted: true), data: {turbo_method: :patch} %>
+  </p>
+<% end %>
+
 <%= link_to "All Ships", ships_path %>
