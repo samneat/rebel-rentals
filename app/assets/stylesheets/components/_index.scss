@@ -4,6 +4,121 @@
 @import "form_legend_clear";
 @import "navbar";
 
+/* Your card CSS file */
+// div {
+//   display: block;
+// }
+
+// .container {
+//   width: 600px;
+//   margin: 0 auto;
+// }
+
+// .card-category {
+//   height: 180px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   /* background: linear-gradient(rgba(0, 0, 0, 0.9)); */
+// }
+
+// .card-product {
+//   display: flex;
+//   justify-content: left;
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+//   align-items: center;
+// }
+
+// .card-left-image {
+//   padding: 0px 20px 0px 0px;
+//   width:110px;
+//   height: 120px;
+//   background-size: cover;
+//   background-position: center center;
+//   margin: 0px 10px 0px 0px;
+// }
+
+// .text-container {
+//   justify-content: left;
+//   text-align: left;
+//   padding: 0px 0px 0px 5px;
+// }
+
+// .text-container h2 {
+//   margin: 5;
+//   font-size: smaller;
+// }
+
+// .text-container p {
+//   margin: 5;
+//   font-size: smaller;
+// }
+
+// .card-trip {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   border-radius: 2px;
+//   box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+// }
+
+// .card-trip-image {
+//   width: 100%;
+//   height: 200px;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   position: relative;
+// }
+
+// .card-trip-bottom-container {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-size: smaller;
+//   margin: 0px;
+// }
+
+// .card-trip-left-item {
+//   text-align: left;
+//   padding: 16px 24px;
+// }
+
+// .card-trip-left-item h2, p{
+//   margin: 0px;
+// }
+
+// .card-trip-right-item {
+//   padding: 0px 24px;
+// }
+
+// .avatar {
+//   width: 30px;
+//   height: 30px;
+//   object-fit: cover;
+//   position: absolute;
+//   border-radius: 50%;
+//   border-style: solid;
+//   border-color: black;
+//   border-width: 2px;
+//   bottom: -15px;
+//   right: 20px;
+// }
+
+// =====================================
+// =====================================
+// =====================================
+
 .card-product {
   overflow: hidden;
   height: 120px;
