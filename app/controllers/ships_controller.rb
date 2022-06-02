@@ -40,6 +40,10 @@ class ShipsController < ApplicationController
     redirect_to ships_path, status: :see_other
   end
 
+  def my_ships
+    @ships = Ship.where(user: current_user)
+  end
+
   private
 
   def ship_params
