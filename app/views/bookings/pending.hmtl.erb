@@ -1,0 +1,4 @@
+<h1>Pending Bookings</h1>
+<% @bookings.where(status: false).each do |booking| %>
+  <p><%= booking %></p>
+<% end %>
