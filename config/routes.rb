@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get "/my_ships", to: "ships#my_ships"
   resources :ships do
     resources :reviews, only: [:new, :show, :index]
-    resources :bookings, only: [:new, :create, :show, :edit, :update]
+    resources :bookings, only: [:new, :create, :show, :edit, :update] do
+      get "/confirmation", to: "bookings#confirm"
+      patch "/accept", to: "bookings#accept"
+    end
   end
   # Defines the root path route ("/")
   # root "articles#index"

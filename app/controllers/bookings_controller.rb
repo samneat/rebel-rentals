@@ -4,13 +4,22 @@ class BookingsController < ApplicationController
     @ship = Ship.find(params[:ship_id])
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
+  def confirm
+    @booking = Booking.find(params[:booking_id])
+    @ship = Ship.find(params[:ship_id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @ship = Ship.find(params[:ship_id])
     @booking.user = current_user
     @booking.ship = @ship
     if @booking.save!
-      redirect_to my_bookings_path
+      redirect_to ship_booking_confirm_path(@ship, @booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,6 +27,7 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = Booking.where(user: current_user)
+    @pending_bookings = Booking.where(user: current_user, accepted: false)
   end
 
   def edit
@@ -33,6 +43,14 @@ class BookingsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def accept
+    @booking = Booking.find(params[:booking_id])
+    @ship = Ship.find(params[:ship_id])
+    @booking.accepted = params[:accepted]
+    @booking.save
+    redirect_to my_bookings_path
   end
 
   private
