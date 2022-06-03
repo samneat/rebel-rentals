@@ -1,3 +1,66 @@
-<h1>Pages#home</h1>
-<h2>Logged in user: <%= current_user.email || "None" %></h2>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<%# <head1>
+
+</head1>
+
+
+<header1 class="header">
+  <h2 class="logo"><a href="#">Rebel Rentals</a></h2>
+    <ul class="main-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Ships</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</header1> %>
+
+<div class="banner">
+  <form action="/action_page.php" class="container1">
+    <h2>Find your ship</h2>
+    <p>Join the battle now! Find your nearest ship and save the galaxy!</p>
+    <br>
+    <%# <label for="email"><b>Ship type</b></label>
+    <input type="text" placeholder="Star Cruiser, Transporter..." name="email" required>
+
+    <label for="psw"><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="psw" required> %>
+    <%= link_to "All Ships >> ", ships_path, class: "btn1"%>
+    <%# <button type="submit" class="btn1">Find <i class="fa-solid fa-arrow-right"></i></button> %>
+    <br>
+    <br>
+  </form>
+</div>
+
+<footer class="footer1-distributed">
+
+  <div class="footer1-right">
+
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+
+  </div>
+
+  <div class="footer1-left">
+
+    <p class="footer1-links">
+      <a class="link-1" href="#">Home</a>
+
+      <a href="#">Blog</a>
+
+      <a href="#">Pricing</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Faq</a>
+
+      <a href="#">Contact</a>
+    </p>
+
+    <p>RebelRentals &copy; 2022</p>
+  </div>
+
+</footer>
+</html>
