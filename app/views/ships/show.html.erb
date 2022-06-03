@@ -75,11 +75,12 @@
 <br>
 <div class="container text-center">
   <%= link_to "All Ships", ships_path, class: "btn btn-primary" %>
-</div>
-<br>
-<% if current_user == @ship.user %>
-  <%= link_to "Edit Ship", edit_ship_path(@ship) %>
+  <%# <% if current_user == @ship.user %>
+  <%= link_to "Edit Ship", edit_ship_path(@ship), class: "btn btn-primary" %>
   <br>
   <%= link_to "Eliminate Ship", ship_path(@ship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>
-<% end %>
+<%# <% end %>
+</div>
+<br>
+
 </div>
