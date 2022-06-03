@@ -1,17 +1,20 @@
-<h1>My Bookings</h1>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %> <%= link_to "Edit Booking", edit_ship_booking_path(booking.ship, booking), class:"btn btn-primary m-3" %></li>
-  <% end %>
-</ul>
-
+<div class="container">
+  <h1 class="pt-5">My Bookings</h1>
+    <% @bookings.each do |booking| %>
+  <div class="card-trip my-5 p-3">
+      <strong><%= booking.ship.name %></strong>
+      <p>from <%= booking.start_date %> to <%= booking.end_date %></p>
+      <%= link_to "Edit Booking", edit_ship_booking_path(booking.ship, booking), class:"btn btn-primary m-3" %></p>
+  </div>
+    <% end %>
+</div>
 <hr>
-<h1>Pending Bookings</h1>
-<% @pending_bookings.each do |booking| %>
-  <p>
-    <%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %>
-    <%= link_to "Confirm", ship_booking_accept_path(booking.ship, booking, accepted: true), data: {turbo_method: :patch} %>
-  </p>
-<% end %>
-
-<%= link_to "All Ships", ships_path %>
+<div class="container">
+  <h1 class="pt-3">Pending Bookings</h1>
+  <% @pending_bookings.each do |booking| %>
+    <p>
+      <%= booking.ship.name %> from <%= booking.start_date %> to <%= booking.end_date %>
+      <%= link_to "Confirm", ship_booking_accept_path(booking.ship, booking, accepted: true), data: {turbo_method: :patch} %>
+    </p>
+  <% end %>
+</div>
