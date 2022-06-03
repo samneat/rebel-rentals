@@ -2,8 +2,12 @@
   <h1 class="pt-5">My Bookings</h1>
     <% @bookings.each do |booking| %>
   <div class="card-trip my-5 p-3">
+    <%# insert ship image here %>
+    <%= cl_image_tag booking.ship.photo.key %>
+    <div class="title mt-3">
       <strong><%= booking.ship.name %></strong>
-      <p>from <%= booking.start_date %> to <%= booking.end_date %></p>
+    </div>
+      <p>Booked from <%= booking.start_date %> to <%= booking.end_date %></p>
       <%= link_to "Edit Booking", edit_ship_booking_path(booking.ship, booking), class:"btn btn-primary m-3" %></p>
   </div>
     <% end %>
