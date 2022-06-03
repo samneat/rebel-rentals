@@ -1,23 +1,79 @@
-<div class="container">
-<div class="show-page">
-  <h1><%= @ship.name.capitalize %></h1>
-  <p>Model: <%= @ship.model %></p>
-  <p>Credits: <%= @ship.cost%></p>
-  <p>Ship length: <%= @ship.length%></p>
-  <p>Atmospheric speed: <%= @ship.atmospheric_speed %></p>
-  <p>Crew: <%= @ship.crew %></p>
-  <p>Passengers: <%= @ship.passengers %></p>
-    <% if @ship.photo.attached? %>
+<div class="container row">
+  <div class="container col-8 p-5">
+    <div class="top-left row">
+      <div class="top-left-left col-6">
+        <h3><strong><%= @ship.name.capitalize %></strong></h3>
+      </div>
+      <div class="top-left-right col-6 text-end px-5">
+        <h4>Credits: <%= @ship.cost%></h4>
+      </div>
+    </div>
+    <div class="middle-left-image row">
+      <div class="">
+      <% if @ship.photo.attached? %>
         <%= cl_image_tag @ship.photo.key, crop: :fill, :class => "img_card" %>
       <% else %>
-        <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
+        <img class="img_card" src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
       <% end %>
+      </div>
+    </div>
+    <div class="details container row">
+      <div class="col-6">
+        <h5><strong>Model:</strong></h5>
+      </div>
+      <div class="col-6">
+        <h5><%= @ship.model %></h5>
+      </div>
+    </div>
+    <div class="container row">
+      <div class="col-6">
+        <h5><strong>Ship length:</strong></h5>
+      </div>
+      <div class="col-6">
+        <h5><%= @ship.length%></h5>
+      </div>
+    </div>
+    <div class="container row">
+      <div class="col-6">
+        <h5><strong>Atmospheric speed:</strong></h5>
+      </div>
+      <div class="col-6">
+        <h5><%= @ship.atmospheric_speed %></h5>
+      </div>
+    </div>
+    <div class="container row">
+      <div class="col-6">
+        <h5><strong>Crew:</strong></h5>
+      </div>
+      <div class="col-6">
+        <h5><%= @ship.crew %></h5>
+      </div>
+    </div>
+    <div class="container row">
+      <div class="col-6">
+        <h5><strong>Passengers:</strong></h5>
+      </div>
+      <div class="col-6">
+        <h5><%= @ship.passengers %></h5>
+      </div>
+    </div>
+  </div>
+  <div class="container col-4 p-5">
+    <div class="booking-form">
+      <div class="form-group mt-3">
+        <%= simple_form_for [@ship, @booking] do |f| %>
+        <%= f.input :start_date, html5: true %>
+        <%= f.input :end_date, html5: true %>
+        <%= f.button :submit, class:"btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<% if current_user != @ship.user %>
-  <%= link_to "Book Ship", new_ship_booking_path(@ship) %>
-<% end %>
-<%= link_to "All Ships", ships_path %>
+<div class="container text-center">
+  <%= link_to "All Ships", ships_path, class: "btn btn-primary" %>
+</div>
 <br>
 <% if current_user == @ship.user %>
   <%= link_to "Edit Ship", edit_ship_path(@ship) %>
