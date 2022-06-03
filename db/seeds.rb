@@ -18,7 +18,10 @@ require "open-uri"
 #   Ship.create!(name: ship["name"], description: ship["model"], user_id: 1)
 # end
 
+Bookings.desroy_all
 Ship.destroy_all
+User.destroy_all
+
 puts "creating user"
 user = User.create!(username: 'Luke', email:"luke@email.com", password: '123456')
 puts "user created"
