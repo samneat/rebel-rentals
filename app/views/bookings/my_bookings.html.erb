@@ -8,6 +8,8 @@
       <strong><%= booking.ship.name %></strong>
     </div>
       <p>Booked from <%= booking.start_date %> to <%= booking.end_date %></p>
+      <p>Credits per day: <%= booking.ship.cost %></p>
+      <p>Total cost of booking: <%= (booking.end_date - booking.start_date).to_i * booking.ship.cost.to_i %></p>
       <%= link_to "Edit Booking", edit_ship_booking_path(booking.ship, booking), class:"btn btn-primary m-3" %></p>
   </div>
     <% end %>
