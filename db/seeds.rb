@@ -18,7 +18,7 @@ require "open-uri"
 #   Ship.create!(name: ship["name"], description: ship["model"], user_id: 1)
 # end
 
-Booking.desroy_all
+Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
 
