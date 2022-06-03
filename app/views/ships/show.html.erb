@@ -1,10 +1,18 @@
-<h1><%= @ship.name.capitalize %></h1>
-<p>Model: <%= @ship.model %></p>
-<p>Credits: <%= @ship.cost%></p>
-<p>Ship length: <%= @ship.length%></p>
-<p>Atmospheric speed: <%= @ship.atmospheric_speed %></p>
-<p>Crew: <%= @ship.crew %></p>
-<p>Passengers: <%= @ship.passengers %></p>
+<div class="container">
+<div class="show-page">
+  <h1><%= @ship.name.capitalize %></h1>
+  <p>Model: <%= @ship.model %></p>
+  <p>Credits: <%= @ship.cost%></p>
+  <p>Ship length: <%= @ship.length%></p>
+  <p>Atmospheric speed: <%= @ship.atmospheric_speed %></p>
+  <p>Crew: <%= @ship.crew %></p>
+  <p>Passengers: <%= @ship.passengers %></p>
+    <% if @ship.photo.attached? %>
+        <%= cl_image_tag @ship.photo.key, crop: :fill, :class => "img_card" %>
+      <% else %>
+        <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
+      <% end %>
+</div>
 
 <% if current_user != @ship.user %>
   <%= link_to "Book Ship", new_ship_booking_path(@ship) %>
@@ -16,3 +24,4 @@
   <br>
   <%= link_to "Eliminate Ship", ship_path(@ship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>
 <% end %>
+</div>

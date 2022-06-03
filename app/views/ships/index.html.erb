@@ -1,50 +1,26 @@
-<!-- >
-<h1>The Hanger</h1>
-
-  <% @ships.each do |ship| %>
-  <div class="card-product my-3">
-    <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
-    <div class="card-product-infos">
-      <h2><%= link_to ship.name, ship_path(ship) %></h2>
-      <p> <strong> <%= ship.model %> </strong>available for this battle, only <strong> <%= ship.cost %></strong> space credits only.</p>
-    </div>
-  </div>
-  <%# <li class="card"><%= link_to ship.name, ship_path(ship) %>
-  <%# </li> %>
-  <% end %>
-
-<hr>
-<br>
-<% if current_user  %>
-  <%= link_to 'Create Ship', new_ship_path %>
-<% end %>
--->
-<h1>The Hanger</h1>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <% @ships.each do |ship| %>
-        <div class="card-trip m-3">
-          <% if ship.photo.attached? %>
-            <%= cl_image_tag ship.photo.key, height: 300, width: 600, crop: :fill, :class => "img_card" %>
-          <% else %>
-            <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
-          <% end %>
-          <div class="card-trip-bottom-container">
-            <div class="card-trip-left-item">
-              <h2><%= link_to ship.name, ship_path(ship) %></h2>
-              <p> <strong> <%= ship.model %> </strong>available for this battle, only
-            </div>
-            <div class="card-trip-right-itme">
-              <strong> <%= ship.cost %></strong> space credits only.</p>
-            </div>
-          </div>
+<div class="mx-auto">
+<h1 class="d-flex justify-content-center py-10">The Hanger</h1>
+  <div class="container-box mx-auto">
+    <% @ships.each do |ship| %>
+    <div class="card-trip mr-2 mb-5">
+      <% if ship.photo.attached? %>
+        <%= cl_image_tag ship.photo.key, crop: :fill, :class => "img_card" %>
+      <% else %>
+        <img src="https://images-cdn.fantasyflightgames.com/filer_public/02/ab/ 02ab0d04-978a-444d-b862-f9d79cbee964/swz12_t65-x-wing.png" />
+      <% end %>
+      <div class="card-trip-bottom-container">
+        <div class="card-trip-left-item">
+          <h2><%= link_to ship.name, ship_path(ship) %></h2>
+          <p> <strong> <%= ship.model %> </strong>available for this battle, only
+        </div>
+        <div class="card-trip-right-itme">
+          <strong> <%= ship.cost %></strong> space credits only.</p>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 <hr>
 <br>
 <% if current_user  %>
