@@ -1,5 +1,10 @@
 <div class="mx-auto">
 <h1 class="d-flex justify-content-center py-5">The Hanger</h1>
+  <div class="text-center pb-3">
+    <% if current_user  %>
+      <%= link_to 'Create Ship', new_ship_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div class="container-box mx-auto">
     <% @ships.each do |ship| %>
     <div class="card-trip mr-2 mb-5">
@@ -23,8 +28,8 @@
 </div>
 <hr>
 <br>
-<div class="container">
+<div class="container text-center p-3">
   <% if current_user  %>
-    <%= link_to 'Create Ship', new_ship_path, class: "btn btn-primary" %>
+    <%= link_to 'Create Ship', new_ship_path, class: "btn btn-primary btn-lg" %>
   <% end %>
 </div>
