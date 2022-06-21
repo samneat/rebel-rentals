@@ -1,2 +1,2 @@
 Week 7 - Airbnb clone.
-Fancy renting an x-wing or even the death star?
+This weeks task is to build an Airbnb clone, we decided it would be more fun to rent Star Wars vehicles than flats.
